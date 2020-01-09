@@ -15,4 +15,9 @@ export class HeroService {
     this.messageSerivce.add('查詢Heroe List資料....');
     return of(HEROES);
   }
+
+  getHero(id: number): Observable<Hero> {
+    this.messageSerivce.add(`查詢Hero id:${id}`);
+    return of(HEROES.find(hero => hero.id === id));
+  }
 }
